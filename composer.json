@@ -1,0 +1,24 @@
+{
+    "name": "nongbit/codeigniter-vite",
+    "description": "Integrate Vite to CodeIgniter 4",
+    "keywords": ["codeigniter", "vite"],
+    "authors": [
+        {
+            "name": "Nongbit"
+        }
+    ],
+    "license": "MIT",
+    "type": "library",
+    "homepage": "https://github.com/nongbit/codeigniter-vite#readme",
+    "support": {
+        "issues": "https://github.com/nongbit/codeigniter-vite/issues",
+        "source": "https://github.com/nongbit/codeigniter-vite"
+    },
+    "autoload": {
+        "psr-4": {
+            "Nongbit\\Vite\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
