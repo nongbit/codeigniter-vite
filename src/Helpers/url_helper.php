@@ -11,17 +11,17 @@ function vite_url(string $path = ''): ?string
         return "{$parts['scheme']}://{$parts['host']}";
     };
 
-    $entryPointUrl = $mainUrl(base_url()) . ':5173/' . str_replace(ROOTPATH, '', APPPATH) . $config->entryPoints[$path];
+    $entryPointUrl = $mainUrl(base_url()) . ':5173/' . $config->entryPoints[$path];
     if (@file_get_contents($entryPointUrl)) {
         return sprintf('<script type="module" src="%s"></script>', $entryPointUrl);
     }
 
     $mainPath = explode('/', $path)[0];
-    $manifestUrl = base_url("{$mainPath}/manifest.json");
+    $manifestUrl = base_url("{$mainPath}/.vite/manifest.json");
     $manifest = json_decode(@file_get_contents($manifestUrl), false);
     if (empty($manifest)) return null;
 
-    $key = str_replace(ROOTPATH, '', APPPATH) . $config->entryPoints[$path];
+    $key = $config->entryPoints[$path];
     if (! property_exists($manifest, $key)) return null;
 
     $entryPoint = $manifest->{$key};
