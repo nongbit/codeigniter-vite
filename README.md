@@ -15,7 +15,7 @@ Run command to initiate vite.
 php spark vite:init
 ```
 
-Open `APPPATH/Config/Vite.php`.
+Create and open `APPPATH/Config/Vite.php`.
 
 ```php
 <?php
